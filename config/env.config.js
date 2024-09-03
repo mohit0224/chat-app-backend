@@ -4,7 +4,6 @@ const envConfig = {
 	BCRYPT_SALT: parseInt(process.env.BCRYPT_SALT),
 	JWT_SECRET: String(process.env.JWT_SECRET),
 	FRONTEND_URI: String(process.env.FRONTEND_URI),
-	CORS_ORIGIN: String(process.env.CORS_ORIGIN),
 };
 
 export default envConfig;
