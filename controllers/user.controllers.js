@@ -2,12 +2,13 @@ import { signupValidation, loginValidation } from "../schema/user.schema.js";
 import { httpError, httpResponse } from "../utils/httpRes.utils.js";
 import User from "../models/user.models.js";
 import { generateToken } from "../utils/jwt.utils.js";
+import envConfig from "../config/env.config.js";
 
 const cookieOption = {
 	httpOnly: true,
 	secure: true,
-	sameSite: "Strict",
-	domain: "https://chat-app-frontend-virid-pi.vercel.app/",
+	sameSite: "None",
+	domain: envConfig.FRONTEND_URI,
 	maxAge: 1 * 60 * 60 * 1000,
 };
 
