@@ -7,7 +7,7 @@ const cookieOption = {
 	httpOnly: true,
 	secure: true,
 	sameSite: "Strict",
-	// domain: "http://localhost:5173/",
+	domain: "https://chat-app-frontend-virid-pi.vercel.app/",
 	maxAge: 1 * 60 * 60 * 1000,
 };
 
