@@ -1,15 +1,10 @@
-const allowedOrigins = process.env.CORS_ORIGIN;
+import envConfig from "./env.config";
 
 const wsCorsOption = {
 	cors: {
-		origin: function (origin, callback) {
-			if (!origin) return callback(null, true);
-			if (allowedOrigins.indexOf(origin) !== -1) {
-				callback(null, true);
-			} else {
-				callback(new Error("Not allowed by CORS"));
-			}
-		},
+		origin: envConfig.CORS_ORIGIN, // Replace with your client URL
+		methods: ["GET", "POST"],
+		allowedHeaders: ["my-custom-header"],
 		credentials: true,
 	},
 };
