@@ -1,10 +1,9 @@
-import envConfig from "./env.config";
+import envConfig from "./env.config.js";
 
 const wsCorsOption = {
 	cors: {
 		origin: envConfig.CORS_ORIGIN, // Replace with your client URL
 		methods: ["GET", "POST"],
-		allowedHeaders: ["my-custom-header"],
 		credentials: true,
 	},
 };

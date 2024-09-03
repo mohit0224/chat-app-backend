@@ -12,7 +12,6 @@ import wsCorsOption from "./config/wsCors.config.js";
 
 const app = express();
 const server = createServer(app);
-export const io = new Server(server, wsCorsOption);
 
 app.use(cors(corsOption));
 app.use(express.json());
@@ -20,13 +19,14 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(morgan("dev"));
 
+export const io = new Server(server, wsCorsOption);
 // ----------------------------------------------------------------
 // ----------------------------------------------------------------
 
 const users = {};
 
 io.on("connection", (socket) => {
-	// console.log(`Client connect with socket :: ${socket.id}`);
+	console.log(`Client connect with socket :: ${socket.id}`);
 	const userId = socket.handshake.query.userId;
 	if (userId !== "undefined") {
 		users[userId] = socket.id;

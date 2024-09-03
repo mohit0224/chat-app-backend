@@ -8,7 +8,7 @@ const cookieOption = {
 	httpOnly: true,
 	secure: true,
 	sameSite: "None",
-	domain: envConfig.FRONTEND_URI,
+	// domain: envConfig.FRONTEND_URI,
 	maxAge: 1 * 60 * 60 * 1000,
 };
 
