@@ -9,17 +9,28 @@ import userRoute from "./routes/user.routes.js";
 import messageRoute from "./routes/message.routes.js";
 import corsOption from "./config/cors.config.js";
 import wsCorsOption from "./config/wsCors.config.js";
-import { morganFnc, morganFormat } from "./config/morgan.config.js";
+import { morganFnc } from "./config/morgan.config.js";
 
 const app = express();
 const server = createServer(app);
 export const io = new Server(server, wsCorsOption);
+s;
 
 app.use(cors(corsOption));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(morgan(morganFormat, morganFnc));
+
+app.use((req, res, next) => {
+	res.header("Access-Control-Allow-Origin", process.env.FRONTEND_URI);
+	res.header("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
+	res.header(
+		"Access-Control-Allow-Headers",
+		"Origin, X-Requested-With, Content-Type, Accept, Authorization"
+	);
+	next();
+});
 
 // ----------------------------------------------------------------
 // ----------------------------------------------------------------
