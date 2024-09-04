@@ -16,8 +16,18 @@ import helmetConfig from "./config/helmet.config.js";
 const app = express();
 const server = createServer(app);
 export const io = new Server(server, wsCorsOption);
+const isProduction = process.env.NODE_ENV === "production";
 
 app.use(helmet(helmetConfig));
+
+if (isProduction) {
+	app.use((req, res, next) => {
+		if (req.secure) {
+			return next();
+		}
+		res.redirect(`https://${req.headers.host}${req.url}`);
+	});
+}
 
 app.use(cors(corsOption));
 app.use(express.json());
