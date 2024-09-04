@@ -15,6 +15,9 @@ const helmetConfig = {
 		includeSubDomains: true,
 		preload: true,
 	},
+	referrerPolicy: {
+		policy: "no-referrer",
+	},
 };
 
 export default helmetConfig;
