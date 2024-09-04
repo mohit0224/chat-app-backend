@@ -14,7 +14,6 @@ import { morganFnc } from "./config/morgan.config.js";
 const app = express();
 const server = createServer(app);
 export const io = new Server(server, wsCorsOption);
-s;
 
 app.use(cors(corsOption));
 app.use(express.json());
