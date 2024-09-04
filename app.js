@@ -21,17 +21,15 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(morgan(morganFormat, morganFnc));
 
-app.use((req, res, next) => {
-	console.log(req.headers);
-
-	res.header("Access-Control-Allow-Origin", process.env.FRONTEND_URI);
-	res.header("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
-	res.header(
-		"Access-Control-Allow-Headers",
-		"Origin, X-Requested-With, Content-Type, Accept, Authorization"
-	);
-	next();
-});
+// app.use((req, res, next) => {
+// res.header("Access-Control-Allow-Origin", process.env.FRONTEND_URI);
+// 	res.header("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
+// 	res.header(
+// 		"Access-Control-Allow-Headers",
+// 		"Origin, X-Requested-With, Content-Type, Accept, Authorization"
+// 	);
+// 	next();
+// });
 
 // ----------------------------------------------------------------
 // ----------------------------------------------------------------
