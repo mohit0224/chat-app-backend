@@ -12,14 +12,13 @@ import wsCorsOption from "./config/wsCors.config.js";
 import { morganFnc, morganFormat } from "./config/morgan.config.js";
 import helmet from "helmet";
 import helmetConfig from "./config/helmet.config.js";
-import isRedirect from "./middlewares/isRedirect.middleware.js";
 
 const app = express();
 const server = createServer(app);
 export const io = new Server(server, wsCorsOption);
 
 app.use(helmet(helmetConfig));
-app.use(isRedirect);
+
 app.use(cors(corsOption));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
