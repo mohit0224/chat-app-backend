@@ -9,7 +9,7 @@ import userRoute from "./routes/user.routes.js";
 import messageRoute from "./routes/message.routes.js";
 import corsOption from "./config/cors.config.js";
 import wsCorsOption from "./config/wsCors.config.js";
-import { morganFnc } from "./config/morgan.config.js";
+import { morganFnc, morganFormat } from "./config/morgan.config.js";
 
 const app = express();
 const server = createServer(app);
