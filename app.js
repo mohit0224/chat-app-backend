@@ -10,14 +10,11 @@ import messageRoute from "./routes/message.routes.js";
 import corsOption from "./config/cors.config.js";
 import wsCorsOption from "./config/wsCors.config.js";
 import { morganFnc, morganFormat } from "./config/morgan.config.js";
-import helmet from "helmet";
-import helmetConfig from "./config/helmet.config.js";
 
 const app = express();
 const server = createServer(app);
 export const io = new Server(server, wsCorsOption);
 
-app.use(helmet(helmetConfig));
 app.use(cors(corsOption));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
