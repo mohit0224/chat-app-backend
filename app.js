@@ -9,35 +9,21 @@ import userRoute from "./routes/user.routes.js";
 import messageRoute from "./routes/message.routes.js";
 import corsOption from "./config/cors.config.js";
 import wsCorsOption from "./config/wsCors.config.js";
-import logger from "./logger.js";
+import { morganFnc, morganFormat } from "./config/morgan.config.js";
 
 const app = express();
 const server = createServer(app);
 export const io = new Server(server, wsCorsOption);
-const morganFormat = ":method :url :status :response-time ms";
 
 app.use(cors(corsOption));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
-
-app.use(
-	morgan(morganFormat, {
-		stream: {
-			write: (message) => {
-				const logObject = {
-					method: message.split(" ")[0],
-					url: message.split(" ")[1],
-					status: message.split(" ")[2],
-					responseTime: message.split(" ")[3],
-				};
-				logger.info(JSON.stringify(logObject));
-			},
-		},
-	})
-);
+app.use(morgan(morganFormat, morganFnc));
 
 app.use((req, res, next) => {
+	console.log(req.headers);
+
 	res.header("Access-Control-Allow-Origin", process.env.FRONTEND_URI);
 	res.header("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
 	res.header(
