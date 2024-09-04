@@ -2,3 +2,15 @@
 {"level":"\u001b[32minfo\u001b[39m","message":"development","timestamp":"2024-09-04T07:35:49.017Z"}
 {"level":"\u001b[32minfo\u001b[39m","message":"development","timestamp":"2024-09-04T07:35:53.077Z"}
 {"level":"\u001b[32minfo\u001b[39m","message":"development","timestamp":"2024-09-04T07:35:58.382Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"development","timestamp":"2024-09-04T07:39:59.551Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"development","timestamp":"2024-09-04T07:40:14.967Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/users/check-cookie\",\"status\":\"200\",\"responseTime\":\"0.930\"}","timestamp":"2024-09-04T07:41:20.081Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/users/\",\"status\":\"200\",\"responseTime\":\"42.460\"}","timestamp":"2024-09-04T07:41:20.125Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/users/check-cookie\",\"status\":\"304\",\"responseTime\":\"0.484\"}","timestamp":"2024-09-04T07:41:20.885Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/users/\",\"status\":\"304\",\"responseTime\":\"4.406\"}","timestamp":"2024-09-04T07:41:20.891Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/users/check-cookie\",\"status\":\"304\",\"responseTime\":\"0.112\"}","timestamp":"2024-09-04T07:41:22.266Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/users/\",\"status\":\"304\",\"responseTime\":\"3.702\"}","timestamp":"2024-09-04T07:41:22.268Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/users/check-cookie\",\"status\":\"304\",\"responseTime\":\"1.203\"}","timestamp":"2024-09-04T07:43:23.117Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/users/\",\"status\":\"304\",\"responseTime\":\"19.477\"}","timestamp":"2024-09-04T07:43:23.140Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/users/check-cookie\",\"status\":\"304\",\"responseTime\":\"0.147\"}","timestamp":"2024-09-04T07:43:23.930Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/users/\",\"status\":\"304\",\"responseTime\":\"2.971\"}","timestamp":"2024-09-04T07:43:23.934Z"}
