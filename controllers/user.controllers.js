@@ -2,13 +2,11 @@ import { signupValidation, loginValidation } from "../schema/user.schema.js";
 import { httpError, httpResponse } from "../utils/httpRes.utils.js";
 import User from "../models/user.models.js";
 import { generateToken } from "../utils/jwt.utils.js";
-import envConfig from "../config/env.config.js";
 
 const cookieOption = {
 	httpOnly: true,
 	secure: true,
 	sameSite: "None",
-	// domain: envConfig.FRONTEND_URI,
 	maxAge: 1 * 60 * 60 * 1000,
 };
 
@@ -61,8 +59,8 @@ const loginAccount = async (req, res) => {
 			token,
 		};
 
+		res.cookie("token", token, cookieOption);
 		res
-			.cookie("token", token, cookieOption)
 			.status(200)
 			.json(httpResponse("LoggedIn successfully !!", true, sendLoginResData));
 	} catch (err) {
@@ -72,10 +70,8 @@ const loginAccount = async (req, res) => {
 
 const logoutAccount = async (req, res) => {
 	try {
-		res
-			.clearCookie("token")
-			.status(200)
-			.json(httpResponse("Logged out successfully !!", true, {}));
+		res.clearCookie("token");
+		res.status(200).json(httpResponse("Logged out successfully !!", true, {}));
 	} catch (err) {
 		return res.status(500).json(httpError(err.message, false));
 	}
