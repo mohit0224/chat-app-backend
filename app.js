@@ -9,13 +9,11 @@ import userRoute from "./routes/user.routes.js";
 import messageRoute from "./routes/message.routes.js";
 import corsOption from "./config/cors.config.js";
 import wsCorsOption from "./config/wsCors.config.js";
-import logger from "./logger.js";
 
 const app = express();
 const server = createServer(app);
 export const io = new Server(server, wsCorsOption);
 
-app.use(helmet(helmetConfig(envConfig.FRONTEND_URI)));
 app.use(cors(corsOption));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
