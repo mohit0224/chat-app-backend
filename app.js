@@ -13,6 +13,7 @@ import wsCorsOption from "./config/wsCors.config.js";
 const app = express();
 const server = createServer(app);
 export const io = new Server(server, wsCorsOption);
+const morganFormat = ":method :url :status :response-time ms";
 
 app.use(cors(corsOption));
 app.use(express.json());
