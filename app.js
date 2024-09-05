@@ -9,6 +9,7 @@ import userRoute from "./routes/user.routes.js";
 import messageRoute from "./routes/message.routes.js";
 import corsOption from "./config/cors.config.js";
 import wsCorsOption from "./config/wsCors.config.js";
+import logger from "./logger.js";
 
 const app = express();
 const server = createServer(app);
